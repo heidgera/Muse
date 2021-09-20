@@ -11,6 +11,8 @@ obtain(['µ/serial.js'], (ser)=> {
     var _this = this;
     var serial = new ser.Serial(Buffer.from([START_FLAG + STOP_FLAG]));
 
+    _this.serial = serial;
+
     var errCheck = (data)=> {
       let tot = 0;
       for (let i = 0; i < data.length - 1; i++) {

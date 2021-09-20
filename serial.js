@@ -59,7 +59,7 @@ obtain(['serialport'], (com)=> {
 
     _this.open = (props) => {
       var name = null;
-      com.list(function (err, ports) {
+      com.list().then(ports=>{
         ports.forEach(function (port) {
           //console.log(port);
           if (port.comName.includes(props.name) ||
